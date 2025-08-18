@@ -1,0 +1,33 @@
+body {
+    color: grey;
+    background-color: wheat;
+    text-align: center;
+    align-items: center;
+    margin: 0%;
+    justify-content: center;
+    padding: 0%;
+    margin-top: 10px;
+}
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10%;
+}
+span{
+    font-size: 30px;
+}
+#result, #camera{
+    border: 4px dashed rebeccapurple;
+    border-radius: 10px;
+    width: 400px;
+    height: 200px;
+    padding: auto;
+    margin: auto;
+}
+#resultEmotionName, #resultEmotionName2{
+    color: black;
+}
+#emotionName{
+    font-size: 40px;
+}
