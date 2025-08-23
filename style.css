@@ -31,3 +31,34 @@ span{
 #emotionName{
     font-size: 40px;
 }
+.emoji {
+    font-size: 48px;
+}
+.heading {
+    font-size: 18px;
+    border-radius: 10px;
+    letter-spacing: 10px;
+}
+label {
+    font-size: 14px;
+    color: #df27d1;
+    padding: 6px;
+    border-radius: 10px;
+    background-color:white ;
+    margin-bottom: 15px;
+    
+}
+@media (max-whidth: 768px) {
+    .container{
+        flex-direction:column;
+        gap: 20px;
+        align-items: center;
+    }
+}
+@media (max-whidth: 768px) {
+    #camera, #result {
+        border: none; 
+        width: 90% !important;
+        height: auto !important;
+    }
+}
