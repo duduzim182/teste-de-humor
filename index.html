@@ -8,6 +8,30 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="container">
+
+        <div>
+            <label>Visualizaçao da Webcam</label>
+            <div class="camera"></div>
+            <br><br>
+            <button onclick="takeSnapshot();"classbtn btn-primary>capturar imagem</button>
+        </div>
+        <div>
+            <label>previsao 1: </label>
+            <p class="emitionName" id="resultEmotionName"></p>
+            <p class="emoji" id="updateEmoji"></p>
+
+            <label>previsao 2: </label>
+            <p class="emitionName" id="resultEmotionName2"></p>
+            <p class="emoji" id="updateEmoji2"></p>
+        </div>
+        <div>
+            <label>foto</label>
+            <div class="result"></div>
+            <br><br>
+            <button onclick="takeSnapshot();"classbtn btn-primary>prever emoçao</button>
+        </div>
+    </div>
     <script src="main.js"></script>
 </body>
 </html>
