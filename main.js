@@ -16,3 +16,10 @@ imageFormat: "png"
     })
  }
  console.log('ml5 version:', ml5.version);
+ ml5.imageClassifier("https://teachablemachine.withgoogle.com/models/hROEnpJCB/model.json")
+ .then(model => {
+    classifier = model;
+    console.log('Model Loaded')
+ })
+ .catch(err => console.error('erro ao carregar o modelo:' , err));
+ 
