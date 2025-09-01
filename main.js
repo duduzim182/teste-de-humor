@@ -22,4 +22,34 @@ imageFormat: "png"
     console.log('Model Loaded')
  })
  .catch(err => console.error('erro ao carregar o modelo:' , err));
- 
+
+ function speak (){
+    let synth = window.speechSynthesis;
+    let speakData1 = "A primeira previsao e " + prediction1;
+    let speakData2 = "A segunda previsao e " + prediction2;
+    let utterThis = new SpeechSynthesisUtterance( speakData1 + speakData2)
+    synth.speak(utterThis);
+ }
+ function check (){
+   let img = document.getElementById('capturedImage')
+   if(!classifier){
+      console.error("o modelo aina nao foi carregado")
+      return
+   }
+   classifier.classify(img)
+   .then(results => {
+      console.log(results)
+      document.getElementById("resultEmotionName").innerHTML = results[0].label
+      document.getElementById("resultEmotionName2").innerHTML = results[1].label
+      prediction1 = results[0].label
+      prediction2 = results[1].label
+      speak();
+      if (results[0].label === "feliz"){
+         document.getElementById(emoji).innerHTML = "&#128522"
+      }
+            if (results[0].label === "triste"){
+         document.getElementById(emoji).innerHTML = "&#128522"
+      }
+         
+   })
+ }
