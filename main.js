@@ -2,16 +2,16 @@ let prediction1 = "";
 let prediction2 = "";
 let classifier;
 
-Webcan.set({
+Webcam.set({
 width: 350,
 height: 275,
 imageFormat: "png"
 });
 
- Webcan.attach("#camera")
+ Webcam.attach("#camera")
 
  function takeSnapshot(){
-    Webcan.sanp(function (datauri){
+    Webcan.snap(function (datauri){
         document.getElementById("result").innerHTML = `<img id="capturedImage" src="${datauri}">`;
     })
  }
@@ -45,11 +45,24 @@ imageFormat: "png"
       prediction2 = results[1].label
       speak();
       if (results[0].label === "feliz"){
-         document.getElementById(emoji).innerHTML = "&#128522"
+         document.getElementById('updateEmoji').innerHTML = "&#128522;"
       }
-            if (results[0].label === "triste"){
-         document.getElementById(emoji).innerHTML = "&#128522"
+      if (results[0].label === "triste"){
+         document.getElementById('updateEmoji').innerHTML = "&#128532;"
       }
-         
+      if (results[0].label === "irritado"){
+         document.getElementById('updateEmoji').innerHTML = "&#128548;"
+      }
+       if (results[1].label === "feliz"){
+         document.getElementById('updateEmoji2').innerHTML = "&#128522;"
+      }
+      if (results[1].label === "triste"){
+         document.getElementById('updateEmoji2').innerHTML = "&#128532;"
+      }
+      if (results[1].label === "irritado"){
+         document.getElementById('updateEmoji2').innerHTML = "&#128548;"
+      }
    })
+    .catch(err => console.error(err));
  }
+
